@@ -1,9 +1,7 @@
-import App from "./src/App";
+import App from "@/App";
 
 function Application() {
-    return (
-      <App/>
-    );
-  }
+    return <App />;
+}
 
 export default Application;
