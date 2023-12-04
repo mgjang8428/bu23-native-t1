@@ -10,7 +10,7 @@ export default function PageChangeButton(props) {
     const [backColor, setBackColor] = useState(props.backColor);
 
     return (
-        <Pressable onPressOut={() => changePage(pageInfo)}>
+        <Pressable onPress={() => changePage(pageInfo)}>
             <ButtonView backColor={backColor}>
                 <ButtonText>{buttonTitle}</ButtonText>
             </ButtonView>
