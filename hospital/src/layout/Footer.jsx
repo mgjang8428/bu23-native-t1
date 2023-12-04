@@ -18,7 +18,7 @@ export default function Footer() {
 }
 
 const FooterView = styled.View`
-    background-color: #b19cff;
+    background-color: #cacaca;
     width: 100%;
     height: 15%;
     border: 2px;
