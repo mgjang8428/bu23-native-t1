@@ -3,10 +3,10 @@ import React from "react";
 import { MiddlePageStateStore } from "@/stores/store";
 import styled from "styled-components/native";
 
-export default function Page3() {
+export default function Page2() {
     return (
         <PageView>
-            <Text style={{ fontSize: 30 }}>Page3</Text>
+            <Text style={{ fontSize: 30 }}>환자 정보</Text>
         </PageView>
     );
 }
