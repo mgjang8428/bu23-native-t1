@@ -16,10 +16,12 @@ const ParamedicInfoView = styled.View`
 `;
 
 const ParamedicName = styled.Text`
+    font-size: 18px;
     font-weight: bold;
     text-decoration: underline;
 `;
 
 const ParamedicForm = styled.Text`
+    font-size: 18px;
     margin-left: 5px;
 `;
