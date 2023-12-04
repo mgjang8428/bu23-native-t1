@@ -2,14 +2,13 @@ import { View, Text, Button } from "react-native";
 import React from "react";
 import { MiddlePageStateStore } from "@/stores/store";
 import styled from "styled-components/native";
-import Hospital from "../components/Hospital";
+import Hospital from "../components/hospital/Hospital";
+import HospitalListHeader from "../components/hospitallistheader/HospitalListHeader";
 
 export default function Page1() {
     return (
         <View>
-            <PageHeader>
-                <Text>Top</Text>
-            </PageHeader>
+            <HospitalListHeader />
             <PageScroll>
                 <Hospital />
                 <Hospital />
@@ -31,11 +30,12 @@ const ListMainView = styled.View`
     width: 100%;
     height: 100%;
 `;
-const PageHeader = styled.View`
-    width: 100%;
-    height: 10%;
-`;
-const PageScroll = styled.ScrollView`
+
+const PageScroll = styled.ScrollView.attrs(() => ({
+    contentContainerStyle: {
+        alignItems: "center",
+    },
+}))`
     width: 100%;
     height: 90%;
 `;
