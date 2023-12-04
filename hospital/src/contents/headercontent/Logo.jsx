@@ -9,7 +9,7 @@ export default function Logo() {
                 <Text style={{ color: "#ff0000" }}>E</Text>
                 <Text style={{ color: "#0011ff" }}>A</Text>
                 <Text style={{ color: "#3d3030" }}>:</Text>
-                <Text style={{ color: "#ff7b00" }}>P</Text>
+                <Text style={{ color: "#7700ff" }}>H</Text>
             </LogoText>
         </View>
     );

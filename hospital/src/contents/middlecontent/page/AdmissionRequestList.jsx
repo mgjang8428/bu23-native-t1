@@ -3,10 +3,10 @@ import React from "react";
 import { MiddlePageStateStore } from "@/stores/store";
 import styled from "styled-components/native";
 
-export default function Page1() {
+export default function AdmissionRequestList() {
     return (
         <PageView>
-            <Text style={{ fontSize: 30 }}>PageList</Text>
+            <Text style={{ fontSize: 30 }}>AdmissionRequestList</Text>
             <Text style={{ fontSize: 40 }}>1</Text>
             <Text style={{ fontSize: 40 }}>1</Text>
             <Text style={{ fontSize: 40 }}>1</Text>

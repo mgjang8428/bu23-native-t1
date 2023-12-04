@@ -4,24 +4,24 @@ import styled from "styled-components/native";
 
 export default function ParamedicInfo() {
     return (
-        <ParamedicInfoView>
-            <ParamedicName>홍길동</ParamedicName>
-            <ParamedicForm>대원</ParamedicForm>
-        </ParamedicInfoView>
+        <HospitalInfoView>
+            <HospitalName>단국대학</HospitalName>
+            <HospitalForm>병원</HospitalForm>
+        </HospitalInfoView>
     );
 }
 
-const ParamedicInfoView = styled.View`
+const HospitalInfoView = styled.View`
     flex-direction: row;
 `;
 
-const ParamedicName = styled.Text`
+const HospitalName = styled.Text`
     font-size: 18px;
     font-weight: bold;
     text-decoration: underline;
 `;
 
-const ParamedicForm = styled.Text`
+const HospitalForm = styled.Text`
     font-size: 18px;
     margin-left: 5px;
 `;

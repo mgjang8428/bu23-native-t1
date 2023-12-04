@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import React from "react";
 import styled from "styled-components/native";
 import Logo from "../contents/headercontent/Logo";
-import ParamedicInfo from "../contents/headercontent/ParamedicInfo";
+import HospitalInfo from "../contents/headercontent/HospitalInfo";
 import PageChangeButton from "../contents/headercontent/PageChangeButton";
 import Clock from "../contents/headercontent/Clock";
 
@@ -11,17 +11,17 @@ export default function Header() {
         <HeaderView style={{ elevation: 20 }}>
             <HeaderTop>
                 <Logo />
-                <ParamedicInfo />
+                <HospitalInfo />
             </HeaderTop>
             <HeaderBottom>
                 <PageChangeButton
-                    buttonTitle="환자 정보"
-                    pageInfo="PatientInfo"
+                    buttonTitle="병원 상태"
+                    pageInfo="HospitalState"
                     backColor="#b3c1ff"
                 />
                 <PageChangeButton
-                    buttonTitle="병원 탐색"
-                    pageInfo="HospitalList"
+                    buttonTitle="입원 요청"
+                    pageInfo="AdmissionRequest"
                     backColor="#ffaaaa"
                 />
                 <Clock />
