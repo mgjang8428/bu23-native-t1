@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-export const MiddlePageStateStore = create((set) => ({
-    middlePageState: "PageList",
-    changePage: (page) => set((state) => ({ middlePageState: page })),
+export const PageStateStore = create((set) => ({
+    pageState: "HospitalList",
+    changePage: (page) => set(() => ({ pageState: page })),
 }));

@@ -1,18 +1,18 @@
-import { MiddlePageStateStore } from "@/stores/store";
+import { PageStateStore } from "@/stores/store";
 import { View, Text, Button } from "react-native";
 import React from "react";
-import PageList from "./page/PageList";
-import Page2 from "./page/Page2";
+import HospitalList from "./page/HospitalList";
+import PatientInfo from "./page/PatientInfo";
 import Page3 from "./page/Page3";
 
 export default function MiddleMain() {
-    const { middlePageState, changePage } = MiddlePageStateStore((state) => state);
-    switch (middlePageState) {
-        case "PageList": {
-            return <PageList />;
+    const { pageState } = PageStateStore((state) => state);
+    switch (pageState) {
+        case "HospitalList": {
+            return <HospitalList />;
         }
-        case "Page2": {
-            return <Page2 />;
+        case "PatientInfo": {
+            return <PatientInfo />;
         }
         case "Page3": {
             return <Page3 />;

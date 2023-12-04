@@ -11,7 +11,7 @@ export default function App() {
             <Container>
                 <StatusBar
                     barStyle="dark-content"
-                    backgroundColor="#b5f1bd"
+                    backgroundColor="white"
                 />
                 <Header />
                 <Middle />
@@ -25,5 +25,4 @@ const Container = styled.SafeAreaView`
     width: 100%;
     height: 100%;
     background-color: #ffffff;
-    flex-direction: column;
 `;
