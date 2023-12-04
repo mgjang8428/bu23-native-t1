@@ -11,7 +11,7 @@ export default function App() {
             <Container>
                 <StatusBar
                     barStyle="dark-content"
-                    backgroundColor="#bdffc0"
+                    backgroundColor="#bddaff"
                 />
                 <Header />
                 <Middle />

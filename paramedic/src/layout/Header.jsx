@@ -31,7 +31,7 @@ export default function Header() {
 }
 
 const HeaderView = styled.View`
-    background-color: #bdffc0;
+    background-color: #bddaff;
     width: 100%;
     height: 20%;
     flex-direction: column;
