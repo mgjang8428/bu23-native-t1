@@ -15,7 +15,7 @@ export default function HospitalListHeader() {
                     selectedValue={sel}
                     onValueChange={(value, index) => {
                         setSel(value);
-                        console.log(sel);
+                        console.log("sel value: " + sel);
                     }}
                 >
                     <Picker.Item

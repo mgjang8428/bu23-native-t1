@@ -6,18 +6,22 @@ import HospitalStatus from "./HospitalStatus";
 import HospitalInfoButton from "./HospitalInfoButton";
 import HospitalAdmissionButton from "./HospitalAdmissionButton";
 
-export default function Hospital() {
+export default function Hospital(props) {
+    const [hospitalNum, setHospitalNum] = useState(props.hospitalNum);
     const [selected, setSelected] = useState(false);
     return (
         <Pressable
             onPress={() => {
-                console.log("PressHospital : " + selected);
+                //console.log("PressHospital : " + selected);
                 selected ? setSelected(false) : setSelected(true);
             }}
         >
             <HospitalView selected={selected}>
                 <HospitalMain>
-                    <HospitalInfo />
+                    <HospitalInfo
+                        hospitalName={props.hospitalName}
+                        hospitalDistance={props.hospitalDistance}
+                    />
                     <HospitalStatus />
                 </HospitalMain>
                 {selected ? (

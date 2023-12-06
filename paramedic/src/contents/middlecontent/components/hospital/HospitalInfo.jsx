@@ -1,12 +1,13 @@
 import { View, Text } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/native";
 
-export default function HospitalInfo() {
+export default function HospitalInfo(props) {
+    const [hospitalNum, setHospitalNum] = useState(props.hospitalNum);
     return (
         <HospitalInfoView>
             <HospitalNameView>
-                <HospitalName>서울대학 병원</HospitalName>
+                <HospitalName>{props.hospitalName}</HospitalName>
             </HospitalNameView>
             <HospitalSecondView>
                 <HospitalPaitientView>
@@ -14,7 +15,7 @@ export default function HospitalInfo() {
                     <PaitientCount>0명</PaitientCount>
                 </HospitalPaitientView>
                 <HospitalDistanceView>
-                    <HospitalDistance>5.3</HospitalDistance>
+                    <HospitalDistance>{props.hospitalDistance}</HospitalDistance>
                     <HospitalDistanceForm>KM</HospitalDistanceForm>
                 </HospitalDistanceView>
             </HospitalSecondView>

@@ -6,10 +6,21 @@ import { NowLocationStore } from "@/stores/NowLocationStore";
 export default function NowLocation(props) {
     const [nowLocation, setNowlocation] = useState({ lat: 0, lng: 0 });
     const [count, setCount] = useState(0);
-    const { setNowLocate } = NowLocationStore((state) => state);
+    const { setNowLocate, onlineGpsStatus } = NowLocationStore((state) => state);
 
     useEffect(() => {
         gps();
+        Location.watchPositionAsync(
+            { accuracy: Location.Accuracy.Balanced, timeInterval: 1000, distanceInterval: 5 },
+            (callBack) => {
+                const { latitude, longitude } = callBack.coords;
+                const location = { lat: latitude, lng: longitude };
+                // setNowlocation(location);
+                setNowLocate(latitude, longitude);
+                // onlineGpsStatus();
+                // setCount(count + 1);
+            },
+        );
     }, []);
 
     const gps = async () => {
@@ -21,22 +32,23 @@ export default function NowLocation(props) {
         let location = await Location.getCurrentPositionAsync({});
         // console.log("do");
         let locate = { lat: location.coords.latitude, lng: location.coords.longitude };
-        setNowlocation(locate);
+        // setNowlocation(locate);
         setNowLocate(locate.lat, locate.lng);
+        // onlineGpsStatus();
         // console.log(locate);
     };
 
-    Location.watchPositionAsync(
-        { accuracy: Location.Accuracy.Balanced, timeInterval: 1000, distanceInterval: 5 },
-        (callBack) => {
-            const { latitude, longitude } = callBack.coords;
-            const location = { lat: latitude, lng: longitude };
-            // console.log(location);
-            setNowlocation(location);
-            setNowLocate(latitude, longitude);
-            // setCount(count + 1);
-        },
-    );
+    // Location.watchPositionAsync(
+    //     { accuracy: Location.Accuracy.Balanced, timeInterval: 1000, distanceInterval: 5 },
+    //     (callBack) => {
+    //         const { latitude, longitude } = callBack.coords;
+    //         const location = { lat: latitude, lng: longitude };
+    //         // console.log(location);
+    //         setNowlocation(location);
+    //         setNowLocate(latitude, longitude);
+    //         // setCount(count + 1);
+    //     },
+    // );
 
     return <View></View>;
 }

@@ -13,15 +13,10 @@ export default function App() {
     const { setNowLocate, latitude } = NowLocationStore((state) => state);
     const [locate, setLocate] = useState();
 
-    const changeLocate = (loc) => {
-        setLocate(loc);
-        console.log(locate);
-    };
-
     return (
         <ThemeProvider theme={theme}>
             <Container>
-                <NowLocation func={changeLocate} />
+                <NowLocation />
                 <StatusBar
                     barStyle="dark-content"
                     backgroundColor="#bddaff"
