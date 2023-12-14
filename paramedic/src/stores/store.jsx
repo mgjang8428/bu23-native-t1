@@ -2,6 +2,6 @@ import { create } from "zustand";
 
 //"HospitalList"
 export const PageStateStore = create((set) => ({
-    pageState: "Page3",
+    pageState: "HospitalList",
     changePage: (page) => set(() => ({ pageState: page })),
 }));
