@@ -21,7 +21,7 @@ export default function App() {
     return (
         <ThemeProvider theme={theme}>
             <Container>
-                <NowLocation func={changeLocate} />
+                {/* <NowLocation func={changeLocate} /> */}
                 <StatusBar
                     barStyle="dark-content"
                     backgroundColor="#bddaff"
