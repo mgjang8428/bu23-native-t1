@@ -4,6 +4,7 @@ import React from "react";
 import HospitalList from "./page/AdmissionRequestList";
 import PatientInfo from "./page/HospitalState";
 import Page3 from "./page/Page3";
+import StateChangePage from "./page/StateChangePage";
 
 export default function MiddleMain() {
     const { pageState } = PageStateStore((state) => state);
@@ -16,6 +17,9 @@ export default function MiddleMain() {
         }
         case "Page3": {
             return <Page3 />;
+        }
+        case "StateChangePage": {
+            return <StateChangePage />;
         }
     }
 }

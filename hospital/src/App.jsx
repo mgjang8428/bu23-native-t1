@@ -1,4 +1,4 @@
-import { StatusBar } from "react-native";
+import { StatusBar, View } from "react-native";
 import styled, { ThemeProvider } from "styled-components/native";
 import { theme } from "@/theme";
 import Header from "@/layout/Header";
