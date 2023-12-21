@@ -3,8 +3,11 @@
 // import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
+import { useState } from "react";
 
 const PatientInput = () => {
+    const [severity, setSeverity] = useState(false);
+    const [injury, setInjury] = useState("outer");
     return (
         <BoxMother>
             <BoxHorTitle>
@@ -25,10 +28,26 @@ const PatientInput = () => {
                     <Txt24>응급도</Txt24>
                 </BoxSubTitle>
                 <BoxContentHalf>
-                    <Txt24>평시</Txt24>
+                    <BtnTouch
+                        id="ordinary"
+                        style={{ backgroundColor: severity ? "#fff" : "#fbb" }}
+                        onPress={() => {
+                            setSeverity(false);
+                        }}
+                    >
+                        <Txt24>평시</Txt24>
+                    </BtnTouch>
                 </BoxContentHalf>
                 <BoxContentHalf>
-                    <Txt24>위급</Txt24>
+                    <BtnTouch
+                        id="emergency"
+                        style={{ backgroundColor: severity ? "#fbb" : "#fff" }}
+                        onPress={() => {
+                            setSeverity(true);
+                        }}
+                    >
+                        <Txt24>위급</Txt24>
+                    </BtnTouch>
                 </BoxContentHalf>
             </BoxHor>
             <BoxHor>
@@ -36,10 +55,28 @@ const PatientInput = () => {
                     <Txt24>상해형태</Txt24>
                 </BoxSubTitle>
                 <BoxContentHalf>
-                    <Txt24>외상</Txt24>
+                    <BtnTouch
+                        id="outer"
+                        style={{
+                            backgroundColor: injury === "outer" ? "#fbb" : "#fff",
+                        }}
+                        onPress={() => {
+                            setInjury("outer");
+                        }}
+                    >
+                        <Txt24>외상</Txt24>
+                    </BtnTouch>
                 </BoxContentHalf>
                 <BoxContentHalf>
-                    <Txt24>내상</Txt24>
+                    <BtnTouch
+                        id="inner"
+                        style={{ backgroundColor: injury === "inner" ? "#fbb" : "#fff" }}
+                        onPress={() => {
+                            setInjury("inner");
+                        }}
+                    >
+                        <Txt24>내상</Txt24>
+                    </BtnTouch>
                 </BoxContentHalf>
             </BoxHor>
             <BoxHor>
@@ -58,12 +95,12 @@ const PatientInput = () => {
             </BoxHorFlex2>
             <BoxHorFlex2>
                 <BoxBtn>
-                    <BtnTouch>
+                    <BtnTouch style={{ backgroundColor: "#fcc" }}>
                         <BtnTitle>
                             <Txt24>취소</Txt24>
                         </BtnTitle>
                     </BtnTouch>
-                    <BtnTouch>
+                    <BtnTouch style={{ backgroundColor: "#ccf" }}>
                         <BtnTitle>
                             <Txt24>입력</Txt24>
                         </BtnTitle>
