@@ -25,10 +25,22 @@ const PatientInput = () => {
                     <Txt24>응급도</Txt24>
                 </BoxSubTitle>
                 <BoxContentHalf>
-                    <Txt24>평시</Txt24>
+                    <BtnTouch
+                        id="ordinary"
+                        style={{ backgroundColor: "#fbb" }}
+                        onPress={() => {}}
+                    >
+                        <Txt24>평시</Txt24>
+                    </BtnTouch>
                 </BoxContentHalf>
                 <BoxContentHalf>
-                    <Txt24>위급</Txt24>
+                    <BtnTouch
+                        id="emergency"
+                        style={{ backgroundColor: "#fff" }}
+                        onPress={() => {}}
+                    >
+                        <Txt24>위급</Txt24>
+                    </BtnTouch>
                 </BoxContentHalf>
             </BoxHor>
             <BoxHor>
@@ -36,10 +48,22 @@ const PatientInput = () => {
                     <Txt24>상해형태</Txt24>
                 </BoxSubTitle>
                 <BoxContentHalf>
-                    <Txt24>외상</Txt24>
+                    <BtnTouch
+                        id="outer"
+                        style={{ backgroundColor: "#fbb" }}
+                        onPress={() => {}}
+                    >
+                        <Txt24>외상</Txt24>
+                    </BtnTouch>
                 </BoxContentHalf>
                 <BoxContentHalf>
-                    <Txt24>내상</Txt24>
+                    <BtnTouch
+                        id="inner"
+                        style={{ backgroundColor: "#fff" }}
+                        onPress={() => {}}
+                    >
+                        <Txt24>내상</Txt24>
+                    </BtnTouch>
                 </BoxContentHalf>
             </BoxHor>
             <BoxHor>
@@ -58,12 +82,12 @@ const PatientInput = () => {
             </BoxHorFlex2>
             <BoxHorFlex2>
                 <BoxBtn>
-                    <BtnTouch>
+                    <BtnTouch style={{ backgroundColor: "#fcc" }}>
                         <BtnTitle>
                             <Txt24>취소</Txt24>
                         </BtnTitle>
                     </BtnTouch>
-                    <BtnTouch>
+                    <BtnTouch style={{ backgroundColor: "#ccf" }}>
                         <BtnTitle>
                             <Txt24>입력</Txt24>
                         </BtnTitle>
