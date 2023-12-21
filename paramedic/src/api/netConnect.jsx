@@ -24,24 +24,34 @@ export const testPost = () => {
 
 export const getAllHospitalInfo = async () => {
     const hospitalInfoObj = {
-        hospitalNum: 0,
-        hospitalName: "",
-        hospitalAdress: "",
-        hospitalLat: 0,
-        hospitalLng: 0,
+        number: 0,
+        name: "",
+        adress: "",
+        lat: 0,
+        lng: 0,
+        availablePaitientCount: 0,
+        maxPatientConut: 0,
+        open: false,
+        status: false,
     };
-    let response;
+    let data;
     try {
-        response = await net.get("/info/all").catch((error) => {
-            console.log(error);
-        });
+        await net
+            .get("/info/list")
+            .then((response) => {
+                data = response.data;
+                console.log(data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     } catch (e) {
         console.log(e);
     }
 
-    console.log(response.data);
+    // console.log(response.data);
 
-    return response.data;
+    return data;
 
     // .then((response) => {
     //     data = response.data;
@@ -52,4 +62,15 @@ export const getAllHospitalInfo = async () => {
     console.log(response);
 
     //return data;
+};
+
+export const postRequest = async (send) => {
+    await net
+        .post("request/save", send)
+        .then((response) => {
+            console.log(response.data);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 };

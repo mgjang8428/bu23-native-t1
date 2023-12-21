@@ -8,9 +8,35 @@ import { HospitalInfoStore } from "@/stores/HospitalInfoStore";
 import { CalcDistance } from "@/util/CalcDistance";
 import { NowLocationStore } from "@/stores/NowLocationStore";
 
+import { getAllHospitalInfo } from "@/api/netConnect";
+
 export default function Page1() {
     const { hospitalInfo, hospitalDistance, setDistance } = HospitalInfoStore((state) => state);
     const { onlineGpsStatus, latitude, longitude } = NowLocationStore((state) => state);
+
+    const [hospitalList, setHospitalList] = useState([
+        {
+            number: 0,
+            name: "",
+            adress: "",
+            lat: 0,
+            lng: 0,
+            availablePaitientCount: 0,
+            maxPatientConut: 0,
+            open: false,
+            status: false,
+        },
+    ]);
+
+    useEffect(() => {
+        const getHospitalList = async () => {
+            let data = await getAllHospitalInfo();
+            setHospitalList(data);
+            console.log("DDDD", data);
+        };
+
+        getHospitalList();
+    }, []);
 
     const doDistance = () => {
         hospitalInfo.map((info) => {
@@ -37,16 +63,28 @@ export default function Page1() {
     // }, 5000);
     // }
 
+    //         number: 0,
+    //         name: "",
+    //         adress: "",
+    //         lat: 0,
+    //         lng: 0,
+    //         availablePaitientCount: 0,
+    //         maxPatientConut: 0,
+    //         open: false,
+    //         status: false,
+
     return (
         <View>
             <HospitalListHeader />
             <PageScroll>
-                {hospitalInfo.map((info) => (
+                {hospitalList.map((info) => (
                     <Hospital
-                        key={"s_h" + info.hospitalNum}
-                        hospitalNum={info.hospitalNum}
-                        hospitalName={info.hospitalName}
-                        hospitalDistance={hospitalDistance[info.hospitalNum]}
+                        allInfo={info}
+                        key={"s_h" + info.number}
+                        hospitalNum={info.number}
+                        hospitalName={info.name}
+                        hospitalDistance={hospitalDistance[info.number]}
+                        hospitalAvailable={info.availablePaitientCount}
                     />
                 ))}
             </PageScroll>

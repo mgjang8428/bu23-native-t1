@@ -1,12 +1,26 @@
 import { View, Text } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/native";
 
-export default function HospitalAdmissionButton() {
+import { postRequest } from "@/api/netConnect";
+
+export default function HospitalAdmissionButton(props) {
+    const [number, setNumber] = useState(props.hospitalNum);
+    const [paitientNum, setPaitientNum] = useState(1);
+    const [paramedicNum, setParamedicNum] = useState(1);
+    const [grade, setGrade] = useState(1);
+
+    const [send, setSend] = useState({
+        hospitalNum: number,
+        paitientNum: paitientNum,
+        paramedicNum: paramedicNum,
+        grade: grade,
+    });
+
     return (
         <AdmissionButtonView
             onPress={() => {
-                console.log("HospitalAdmissionButton: Click!");
+                postRequest(send);
             }}
         >
             <ButtonTitle>입원 요청</ButtonTitle>

@@ -12,7 +12,7 @@ export default function HospitalInfo(props) {
             <HospitalSecondView>
                 <HospitalPaitientView>
                     <PaitientTitle>수용가능 환자:</PaitientTitle>
-                    <PaitientCount>0명</PaitientCount>
+                    <PaitientCount>{props.hospitalAvailable}명</PaitientCount>
                 </HospitalPaitientView>
                 <HospitalDistanceView>
                     <HospitalDistance>{props.hospitalDistance}</HospitalDistance>

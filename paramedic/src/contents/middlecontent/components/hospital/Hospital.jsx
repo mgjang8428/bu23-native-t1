@@ -21,13 +21,14 @@ export default function Hospital(props) {
                     <HospitalInfo
                         hospitalName={props.hospitalName}
                         hospitalDistance={props.hospitalDistance}
+                        hospitalAvailable={props.hospitalAvailable}
                     />
-                    <HospitalStatus />
+                    <HospitalStatus hospitalAvailable={props.hospitalAvailable} />
                 </HospitalMain>
                 {selected ? (
                     <HospitalExtra>
                         <HospitalInfoButton />
-                        <HospitalAdmissionButton />
+                        <HospitalAdmissionButton hospitalNum={props.hospitalNum} />
                     </HospitalExtra>
                 ) : (
                     <View></View>
