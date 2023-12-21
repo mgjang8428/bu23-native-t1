@@ -15,8 +15,8 @@ export default function Header() {
             </HeaderTop>
             <HeaderBottom>
                 <PageChangeButton
-                    buttonTitle="환자 정보"
-                    pageInfo="PatientInfo"
+                    buttonTitle="환자 입력"
+                    pageInfo="PatientInput"
                     backColor="#b3c1ff"
                 />
                 <PageChangeButton
